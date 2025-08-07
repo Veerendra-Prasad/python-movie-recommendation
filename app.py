@@ -1,8 +1,13 @@
 from flask import Flask, request, jsonify
 from model.predict import recommend_from_liked
+from flask_cors import CORS
+import os
+from dotenv import load_dotenv
 
 # Initialize Flask app
 app = Flask(__name__)
+frontend_url = os.getenv('FRONTEND_URL')
+CORS(app, origins=[frontend_url])
 
 # API endpoints
 
