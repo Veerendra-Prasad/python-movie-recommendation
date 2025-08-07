@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # Initialize Flask app
 app = Flask(__name__)
 frontend_url = os.getenv('FRONTEND_URL')
-CORS(app, origins=[frontend_url])
+CORS(app, origins=frontend_url)
 
 # API endpoints
 
@@ -29,5 +29,4 @@ def recommend_route():
     return jsonify({"recommendations": recs})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)
