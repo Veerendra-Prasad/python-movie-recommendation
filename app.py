@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # Initialize Flask app
 app = Flask(__name__)
 frontend_url = os.getenv('FRONTEND_URL')
-CORS(app, origins=[frontend_url])
+CORS(app)
 
 # API endpoints
 
